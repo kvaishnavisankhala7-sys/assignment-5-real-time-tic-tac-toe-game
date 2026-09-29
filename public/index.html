@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background"></div>
+
+    <button id="theme-toggle" class="theme-toggle">
+        Dark
+    </button>
+
+    <div class="container">
+
+        <div id="login-screen">
+            <div class="logo">X O</div>
+
+            <h1>Tic Tac Toe</h1>
+
+            <p class="subtitle">
+                Real-time multiplayer game
+            </p>
+
+            <h2>Enter your username</h2>
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Enter username"
+                maxlength="20"
+            >
+
+            <button id="join-btn" class="primary-btn">
+                Join Game
+            </button>
+
+            <p id="login-message"></p>
+        </div>
+
+        <div id="game-screen" class="hidden">
+
+            <div class="game-header">
+                <h1>Tic Tac Toe</h1>
+                <p id="player-info"></p>
+            </div>
+
+            <div class="status-card">
+                <span class="status-dot"></span>
+                <p id="game-status">
+                    Waiting for another player...
+                </p>
+            </div>
+
+            <div id="board">
+                <button class="cell" data-index="0"></button>
+                <button class="cell" data-index="1"></button>
+                <button class="cell" data-index="2"></button>
+                <button class="cell" data-index="3"></button>
+                <button class="cell" data-index="4"></button>
+                <button class="cell" data-index="5"></button>
+                <button class="cell" data-index="6"></button>
+                <button class="cell" data-index="7"></button>
+                <button class="cell" data-index="8"></button>
+            </div>
+
+            <button id="reset-btn" class="primary-btn">
+                Reset Game
+            </button>
+
+            <div class="history-section">
+                <h2>Game History</h2>
+
+                <div id="game-history">
+                    <p>No games played yet.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
